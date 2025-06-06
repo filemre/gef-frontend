@@ -1,0 +1,120 @@
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  min-width: 100%;
+  animation: marquee linear infinite;
+}
+:root {
+  --theme-color: #2563eb; /* Varsayılan Tailwind mavi */
+}
+
+
+body {
+  background: #fff;
+  color: #222;
+  transition: background 0.3s;
+}
+
+html.dark body {
+  background: #18181b;
+  color: #e5e7eb;
+}
+
+html.dark header {
+  background: #23232b !important;
+  color: #fff !important;
+}
+
+html.dark .bg-gray-100 {
+  background-color: #23232b !important;
+}
+
+html.dark .text-gray-800 {
+  color: #e5e7eb !important;
+}
+
+html.dark .bg-white {
+  background-color: #23232b !important;
+  color: #e5e7eb !important;
+}
+
+html.dark .border-gray-200 {
+  border-color: #444 !important;
+}
+
+html.dark .shadow {
+  box-shadow: 0 2px 8px #0004 !important;
+}
+
+header {
+  transition: background 0.3s;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 0.5rem;
+  }
+  header {
+    padding: 1rem 0.5rem;
+  }
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+  }
+  .logo {
+    height: 3em;
+    padding: 0.5em;
+  }
+  .card {
+    padding: 1em;
+  }
+}
