@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Menu from './components/Menu';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+// import { Helmet, HelmetProvider } from 'react-helmet-async';
 import HomePage from './pages/HomePage';
 import ListingsPage from './pages/ListingsPage';
 import NewsPage from './pages/NewsPage';
@@ -66,14 +66,13 @@ function App() {
   document.body.style.fontFamily = settings?.font_family || 'Inter, Arial, sans-serif';
 
   return (
-    <HelmetProvider>
+    {/* HelmetProvider ve Helmet kaldırıldı, başlık ve meta tagler için alternatif eklenebilir */}
     <QueryClientProvider client={queryClient}>
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>{settings?.title || 'GEF Gayrimenkul Arazi Ofisi'}</title>
         {settings?.favicon && <link rel="icon" href={settings.favicon} />}
         {settings?.description && <meta name="description" content={settings.description} />}
-        {/* Open Graph ve Twitter Card SEO meta tagleri */}
         <meta property="og:title" content={settings?.title || 'GEF Gayrimenkul Arazi Ofisi'} />
         <meta property="og:description" content={settings?.description || ''} />
         {settings?.logo && <meta property="og:image" content={settings.logo} />}
@@ -83,7 +82,7 @@ function App() {
         <meta name="twitter:title" content={settings?.title || 'GEF Gayrimenkul Arazi Ofisi'} />
         <meta name="twitter:description" content={settings?.description || ''} />
         {settings?.logo && <meta name="twitter:image" content={settings.logo} />}
-      </Helmet>
+      </Helmet> */}
       {/* Aktif duyurular için banner ve kayan bar */}
       {announcements && announcements.length > 0 && (
         <>
@@ -168,7 +167,7 @@ function App() {
       </BrowserRouter>
     </>
     </QueryClientProvider>
-    // </HelmetProvider>
+    // HelmetProvider kaldırıldı
   );
 }
 
