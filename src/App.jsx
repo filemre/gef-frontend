@@ -66,9 +66,9 @@ function App() {
   document.body.style.fontFamily = settings?.font_family || 'Inter, Arial, sans-serif';
 
   return (
-    {/* HelmetProvider ve Helmet kaldırıldı, başlık ve meta tagler için alternatif eklenebilir */}
     <QueryClientProvider client={queryClient}>
     <>
+      {/* HelmetProvider ve Helmet kaldırıldı, başlık ve meta tagler için alternatif eklenebilir */}
       {/* <Helmet>
         <title>{settings?.title || 'GEF Gayrimenkul Arazi Ofisi'}</title>
         {settings?.favicon && <link rel="icon" href={settings.favicon} />}
